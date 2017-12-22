@@ -5,13 +5,37 @@
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <ion-card (click)="Hello()">
+    <ion-card-header>
+      <ion-icon name="book"></ion-icon> Read Prescription
+    </ion-card-header>
+    <ion-card-content>
+      Here you can view your all prescription.
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-icon name="body"></ion-icon> View Doctors
+    </ion-card-header>
+    <ion-card-content>
+      Here you can view your all your doctors visited.
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-icon name="alarm"></ion-icon> Add to Reminder
+    </ion-card-header>
+    <ion-card-content>
+      Here you can add reminder for your medicines.
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-icon name="search"></ion-icon>Search Doctor or Medicines
+    </ion-card-header>
+    <ion-card-content>
+      Here you can search Medicines and Doctors both.
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>
