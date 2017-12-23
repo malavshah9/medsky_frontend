@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+//`import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 //import { prescription  } from "../../pages/home/classprescription";
 import { Http,Response} from "@angular/http";
@@ -13,7 +13,7 @@ import "rxjs/rx";
 @Injectable()
 export class PrescriptionProvider {
 
-  constructor(public _http:Http,public http: HttpClient) {
+  constructor(public _http:Http) {
     console.log('Hello PrescriptionProvider Provider');
   }
  // private presc:prescription[]=[];
