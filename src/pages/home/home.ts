@@ -10,7 +10,7 @@ export class HomePage {
   constructor(public navCtrl: NavController) {
 
   }
-  Hello()
+  onViewPrescription()
   {
       this.navCtrl.push(Viewprescription1Page);    
   }

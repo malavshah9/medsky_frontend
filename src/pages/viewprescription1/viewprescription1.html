@@ -7,12 +7,25 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>viewprescription1</ion-title>
+    <ion-title>View Prescription</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <ion-card>
+    <ion-card-header>
+      Prescriptions
+    </ion-card-header>
+  
+    <ion-list>
+  
+      <button ion-item *ngFor="let item of allpresc">
+        <ion-icon name="medical" item-start></ion-icon>
+        {{item.fk_doc_email_id}}
+      </button>
+  
+    </ion-list>
+  </ion-card>
 </ion-content>
