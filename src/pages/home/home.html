@@ -1,3 +1,14 @@
+
+<div id="custom-overlay" [style.display]="splash ? 'flex':'none'">
+  <div class="flb">
+   <!-- <div class="Aligner-item Aligner-item--top">-->
+      <!--<img src="assets/imgs/a.png">-->
+      <h1 class="logo1">MEDSKY</h1>
+      
+    <!--</div>-->
+  </div>
+</div>
+
 <ion-header>
   <ion-navbar color="myapp1">
     <ion-title>Home</ion-title>
@@ -6,7 +17,7 @@
 
 <ion-content padding>
   <ion-card (click)="onViewPrescription()">
-    <ion-card-header>
+    <ion-card-header >
       <ion-icon name="book" class="ionicons1"></ion-icon> Read Prescription
     </ion-card-header>
     <ion-card-content>
