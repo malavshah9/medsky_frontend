@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar color="myapp1">
-    <ion-title >View Prescription</ion-title>
+    <ion-title >Your Consulted Doctors</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -16,15 +16,15 @@
 <ion-content padding>
   <ion-card>
       <ion-card-header>
-          Your Consulted Doctors
+          Select Doctor
         </ion-card-header>
   
     <ion-list>
   
-      <button ion-item *ngFor="let item of allpresc">
+      <button ion-item *ngFor="let item of allpresc" (click)="onViewDoctor(item)">
           <ion-icon name="medkit" item-start></ion-icon>
         
-       &nbsp;  {{item.fk_doc_email_id}}
+       &nbsp;  {{item.doc_name}}
        <ion-icon name="arrow-forward" item-end></ion-icon>
        
       </button>

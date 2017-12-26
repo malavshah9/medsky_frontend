@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,LoadingController,ToastController } from 'ionic-angular';
 import { PrescriptionProvider } from "../../providers/prescription/prescription";
-import { prescription } from "../home/classprescription";
-import { Viewprescription2Page } from "../viewprescription2/viewprescription2";
+import { prescdata } from "./classprescriptiondate";
 
 /**
- * Generated class for the Viewprescription1Page page.
+ * Generated class for the Viewprescription2Page page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -13,26 +12,30 @@ import { Viewprescription2Page } from "../viewprescription2/viewprescription2";
 
 @IonicPage()
 @Component({
-  selector: 'page-viewprescription1',
-  templateUrl: 'viewprescription1.html',
+  selector: 'page-viewprescription2',
+  templateUrl: 'viewprescription2.html',
 })
-export class Viewprescription1Page {
+export class Viewprescription2Page {
 
-  allpresc:prescription[]=[];
+  allprescdate:prescdata[]=[];
   constructor(public navCtrl: NavController, public navParams: NavParams,public loadingcontroller:LoadingController,public _dbprescription:PrescriptionProvider) {
+
   }
+ doc_id:string;
+ uid:string="malav@gmail.com";
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad Viewprescription1Page');
-    console.log("Hello Welcome to View Prescription page 1");
+    console.log('ionViewDidLoad Viewprescription2Page');
+    this.doc_id=this.navParams.get('param1');
+    //alert(this.doc_id);
     let loadingdata=this.loadingcontroller.create({
       content:"Fetching your prescriptions"
     });
     loadingdata.present();
-    
-    this._dbprescription.getPrescription().subscribe(
-      (data:prescription[])=>{
-        this.allpresc=data;
+    alert(this.uid+"AND DID IS "+this.doc_id);
+    this._dbprescription. getPrescriptionDate(this.uid,this.doc_id).subscribe(
+      (data:prescdata[])=>{
+        this.allprescdate=data;
         console.log(data);
       },
       function(error){
@@ -44,12 +47,6 @@ export class Viewprescription1Page {
         loadingdata.dismiss()
       }
     );
-  }
-  onViewDoctor(item:prescription)
-  {
-    this.navCtrl.push(Viewprescription2Page,{
-      param1:item.fk_doc_email_id
-    });
   }
 
 }

@@ -14,6 +14,7 @@ import { Tutorialpage1Page } from "../pages/tutorialpage1/tutorialpage1";
 //import { AuthenticationpagePage } from "../pages/authenticationpage/authenticationpage";
 import { SigninpagePage } from "../pages/signinpage/signinpage";
 import { SignuppagePage } from "../pages/signuppage/signuppage";
+import { Viewprescription2Page } from "../pages/viewprescription2/viewprescription2";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -33,7 +34,8 @@ import { SearchproProvider } from '../providers/searchpro/searchpro';
     Searchdocandmed1Page,
     Tutorialpage1Page,
     SignuppagePage,
-    SigninpagePage
+    SigninpagePage,
+    Viewprescription2Page
   ],
   imports: [
     BrowserModule,
@@ -52,7 +54,9 @@ import { SearchproProvider } from '../providers/searchpro/searchpro';
 
     Tutorialpage1Page,
     SigninpagePage,
-    SignuppagePage
+    SignuppagePage,
+
+    Viewprescription2Page
   ],
   providers: [
     StatusBar,
