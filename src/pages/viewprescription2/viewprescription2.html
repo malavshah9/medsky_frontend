@@ -19,7 +19,7 @@
     Select Prescriptions
   </ion-card-header>
 <ion-list>
-  <button ion-item *ngFor="let item of allprescdate">
+  <button ion-item *ngFor="let item of allprescdate" (click)="onViewPrescription(item)">
     <ion-icon name="book" item-start></ion-icon>
     &nbsp; {{item.pres_date}}
   </button>

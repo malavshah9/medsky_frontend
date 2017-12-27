@@ -1,0 +1,124 @@
+<!--
+  Generated template for the Viewprescription3Page page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="myapp1">
+    <ion-title>Your Prescription</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <!--<div class="row responsive-sm">
+    <div class="col">Written by</div>
+    <div class="col">{{doc_name}}</div>
+  </div>
+
+  <div class="row">
+    <div class="col">Date</div>
+    <div class="col">{{pres_date}}</div>
+  </div>
+  
+  <div class="row">
+      <div class="col">Medicines</div>
+      <div class="col">Timings</div>
+    </div>
+  -->
+  <table border="2px">
+    <tr border="2px">
+        <td>Written By Doctor</td>
+        <td>{{doc_name}}</td>
+    </tr>
+    <tr>
+        <td>Date</td>
+        <td>{{pres_date}}</td>
+    </tr>
+    <tr rowspan="2">
+        <td>Medicine Name</td>
+        <td>Timings</td>
+    </tr>
+    <tr>
+      <td>-</td>
+      <td>Morning Doses</td>
+      <td>Noon Doses</td>
+      <td>Night Doses</td>
+      <td>Number of Days</td>
+    </tr>
+<td border="2px">
+  <tr *ngFor="let item of medicine_name">
+    {{item}}
+  </tr>
+</td>
+
+<td border="2px">
+    <tr *ngFor="let item of mor_array">
+      {{item}}
+    </tr>
+  </td>
+
+  <td border="2px">
+      <tr *ngFor="let item of non_array">
+        {{item}}
+      </tr>
+    </td>
+
+    <td border="2px">
+        <tr *ngFor="let item of nig_array">
+          {{item}}
+        </tr>
+      </td>
+
+      <td border="2px">
+          <tr *ngFor="let item of day_array">
+            {{item}}
+          </tr>
+        </td>
+
+  </table>
+
+ 
+
+
+<!--<ion-content padding class="card-background-page">
+    <h2 color="white">Explore</h2>
+  <ion-grid>
+    <ion-row>
+        <ion-col width-50>
+            <ion-card>
+                <h1>Hello</h1>
+              <div class="card-title">São Paulo</div>
+                <div class="card-subtitle">41 Listings</div>
+            </ion-card>
+        </ion-col>
+        <ion-col width-50>
+          <ion-card>
+        <h1>Hello</h1>
+            <div class="card-title">Amsterdam</div>
+            <div class="card-subtitle">64 Listings</div>
+          </ion-card>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col width-50>
+          <ion-card>
+              <h1>Hello</h1>
+            <div class="card-title">San Francisco</div>
+            <div class="card-subtitle">72 Listings</div>
+          </ion-card>
+      </ion-col>
+      <ion-col width-50>
+          <ion-card>
+              <h1>Hello</h1>
+            <div class="card-title">Madison</div>
+            <div class="card-subtitle">28 Listings</div>
+          </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  </ion-content>-->
+</ion-content>

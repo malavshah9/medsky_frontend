@@ -21,15 +21,27 @@ export class PrescriptionProvider {
  // private presc:prescription[]=[];
   private url="http://localhost:3000/prescription/";
   private url2="http://localhost:3000/prescription2/"
+  private url3="http://localhost:3000/med/"
   uid:String="";
   did:String="";
+  pid:Number=0;
+  mid:any;
+
   querystring:String="";
 
   getPrescription()
   {
     this.uid="malav@gmail.com";
-  //  console.log(this.url+this.uid);
     return this._http.get(this.url+this.uid).map((response:Response)=>response.json());
+  }
+  getmedicinename()
+  {
+   
+    return this._http.get(this.url3+this.mid).map((response:Response)=>response.json());
+  }
+  getWholePrescription()
+  {
+  return this._http.get(this.url2+this.pid).map((response:Response)=>response.json());
   }
   getPrescriptionDate(uid,did)
   {

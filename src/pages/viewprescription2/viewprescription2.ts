@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,LoadingController,ToastController } from 'ionic-angular';
 import { PrescriptionProvider } from "../../providers/prescription/prescription";
 import { prescdata } from "./classprescriptiondate";
-
+import { Viewprescription3Page } from "../viewprescription3/viewprescription3";
 /**
  * Generated class for the Viewprescription2Page page.
  *
@@ -32,7 +32,7 @@ export class Viewprescription2Page {
       content:"Fetching your prescriptions"
     });
     loadingdata.present();
-    alert(this.uid+"AND DID IS "+this.doc_id);
+   
     this._dbprescription. getPrescriptionDate(this.uid,this.doc_id).subscribe(
       (data:prescdata[])=>{
         this.allprescdate=data;
@@ -47,6 +47,11 @@ export class Viewprescription2Page {
         loadingdata.dismiss()
       }
     );
+  }
+  onViewPrescription(item){
+    this.navCtrl.push(Viewprescription3Page,{
+      param1:item.pk_pres_id
+    });
   }
 
 }
