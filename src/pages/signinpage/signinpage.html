@@ -7,14 +7,49 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Jainam</ion-title>
+    <ion-title align="left"color="black">Login</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-  <button (click)="onSignInNext()">Aa Home Ni Link 6. Ano code .ts file ma joi le and pachi sign in thay etle avi rite automatic redirect karavi le.</button>
-Aa taru page.Ahiya Tari design and code avse.
-Ek link avse "New To Medsky???".ema sign up page khulse netar direct home page of our app.
+<ion-content scroll="false">
+  <div class="splash-bg"></div>
+  <div class="splash-info"></div>
+  
+  <!--  <div class="img">
+<img src="../../assets/imgs/med3.jpg" alt="">
+</div>-->
+<br/><br/>
+<br/><br/>
+<ion-list>
+
+  <ion-item>
+    <ion-label floating>Email Id</ion-label>
+    <ion-input type="email" [(ngModel)]="email_id" name="email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Password</ion-label>
+    <ion-input type="password" [(ngModel)]="password" name="password"></ion-input>
+  </ion-item>
+  <br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+ &nbsp;
+ <!--<button ion-button round color="secondary">Forget Password</button>-->
+ <span class="pull-right"><a href="">Forgot Password???</a></span> 
+  <div padding>
+
+    <button ion-button round (click)="onSignInNext()"color="secondary" block>Login</button>
+    </div>
+    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+    <button ion-button round (click)="onClick()"color="secondary">New On Medsky???</button>
+    
+
+  
+  </ion-list>
+   
 </ion-content>

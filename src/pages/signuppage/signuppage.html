@@ -7,12 +7,45 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>signuppage</ion-title>
+    <ion-title>Signup</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+    <div class="img">
+        <img src="../../assets/imgs/med.png" alt="">
+      </div>   
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating>Email Id</ion-label>
+      <ion-input type="email" [(ngModel)]="email_id" name="email" required></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" [(ngModel)]="password" name="password"></ion-input>
+    </ion-item>
+   
+
+    <ion-item>
+      <ion-label floating>Mobile No</ion-label>
+      <ion-input type="number" [(ngModel)]="mno" name="mno"></ion-input>
+    </ion-item>
+    
+
+
+    <div padding>
+      <button ion-button round (click)="onSignupClick()" color="secondary" block>Sign Up</button>
+      
+    </div>
+    
+    
+
+  
+  </ion-list>
+  
 
 </ion-content>

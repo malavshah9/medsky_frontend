@@ -21,6 +21,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { PrescriptionProvider } from '../providers/prescription/prescription';
 import { SearchproProvider } from '../providers/searchpro/searchpro';
+import { UserlogProvider } from "../providers/userlog/userlog";
 //import { Tutorialpage1Page } from '../pages/tutorialpage1/tutorialpage1';
 
 
@@ -66,7 +67,8 @@ import { SearchproProvider } from '../providers/searchpro/searchpro';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     PrescriptionProvider,
-    SearchproProvider
+    SearchproProvider,
+    UserlogProvider
   ]
 })
 export class AppModule {}

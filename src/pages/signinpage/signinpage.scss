@@ -1,3 +1,25 @@
 page-signinpage {
 
+    .splash-bg {
+        position: relative;
+        background: url('../../assets/imgs/med.png') no-repeat transparent;
+        background-size: cover;
+        height: 40%;
+        z-index: 1;
+        background-repeat: repeat-x;
+        animation: animatedBackground 40s linear infinite;
+      }
+      @keyframes animatedBackground {
+        from { background-position: 0 0; }
+        to { background-position: 100% 0; }
+      }
+    
+      .splash-info {
+        position: relative;
+        z-index: 2;
+        margin-top: -64px;
+        text-align: center;
+      }
+    
+    
 }
