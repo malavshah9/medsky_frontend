@@ -6,19 +6,38 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="myapp1">
     <ion-title>Tutorial</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-Ahiya Tutorial no animation avse.A pachi karvanu 6.
+<ion-content padding class="getstart">
 
-<button ion-button icon-right (click)="onTutorialNext()">
-  Next
-  <ion-icon name="home"></ion-icon>
-</button>
+<ion-slides pager >
+  
+    <ion-slide   padding class="getstart">
+        <button ion-button icon-right (click)="onTutorialNext()">
+            Skip
+            <ion-icon name="home"></ion-icon>
+          </button>
+      <h2>Paper Less Presciptions</h2>
+    </ion-slide>
+  
+    <ion-slide padding class="getstart1">
+      <h2>Slide 2</h2>
+    </ion-slide>
+  
+    <ion-slide padding class="getstart2">
+      <h2>Slide 3</h2>
+      <button ion-button icon-right (click)="onTutorialNext()">
+        Next
+        <ion-icon name="home"></ion-icon>
+      </button>
+    </ion-slide>
+  
+  </ion-slides>
+
 
 </ion-content>

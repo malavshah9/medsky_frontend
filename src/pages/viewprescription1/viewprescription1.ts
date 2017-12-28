@@ -24,7 +24,7 @@ export class Viewprescription1Page {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Viewprescription1Page');
-    console.log("Hello Welcome to View Prescription page 1");
+    
     let loadingdata=this.loadingcontroller.create({
       content:"Fetching your prescriptions"
     });

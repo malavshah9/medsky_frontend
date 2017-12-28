@@ -19,15 +19,15 @@
 </ion-searchbar>
 <!--<div *ngIf="matchdoctors">-->
 <ion-card *ngFor="let item of matchdoctors">
-  <ion-card-header>
-    <ion-icon name="contact" item-start></ion-icon> {{item.doc_name}}
+  <ion-card-header (click)="onClickDoc(item)">
+    <ion-icon name="contact" item-start ></ion-icon> {{item.doc_name}}
     </ion-card-header>
   </ion-card>
 <!--</div>-->
 <!--<div *ngIf="matchmedicines">-->
 <ion-card *ngFor="let item of matchmedicines">
-    <ion-card-header>
-      <ion-icon name="medkit" item-start></ion-icon>   {{item.med_name}}
+    <ion-card-header (click)="onClickMed(item)">
+      <ion-icon name="medkit" item-start ></ion-icon>   {{item.med_name}}
     </ion-card-header>
 </ion-card>
 <!--</div>-->

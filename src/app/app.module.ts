@@ -16,6 +16,9 @@ import { SigninpagePage } from "../pages/signinpage/signinpage";
 import { SignuppagePage } from "../pages/signuppage/signuppage";
 import { Viewprescription2Page } from "../pages/viewprescription2/viewprescription2";
 import { Viewprescription3Page } from "../pages/viewprescription3/viewprescription3";
+import { Searchdocpage1Page } from '../pages/searchdocpage1/searchdocpage1'
+import { Searchmedpage1Page } from "../pages/searchmedpage1/searchmedpage1";
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -38,7 +41,9 @@ import { UserlogProvider } from "../providers/userlog/userlog";
     SignuppagePage,
     SigninpagePage,
     Viewprescription2Page,
-    Viewprescription3Page
+    Viewprescription3Page,
+    Searchmedpage1Page,
+    Searchdocpage1Page
   ],
   imports: [
     BrowserModule,
@@ -60,7 +65,10 @@ import { UserlogProvider } from "../providers/userlog/userlog";
     SignuppagePage,
 
     Viewprescription2Page,
-    Viewprescription3Page
+    Viewprescription3Page,
+
+    Searchmedpage1Page,
+    Searchdocpage1Page
   ],
   providers: [
     StatusBar,
