@@ -3,9 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HttpModule } from '@angular/http';
+import { IonicStorageModule } from '@ionic/storage';
 
 import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
+import { UserPage } from "../pages/user/user";
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { Viewprescription1Page } from '../pages/viewprescription1/viewprescription1';
@@ -29,7 +30,7 @@ import { UserlogProvider } from "../providers/userlog/userlog";
   declarations: [
     MyApp,
     AboutPage,
-    ContactPage,
+    UserPage,
     HomePage,
     TabsPage,
     Viewprescription1Page,
@@ -43,13 +44,14 @@ import { UserlogProvider } from "../providers/userlog/userlog";
   imports: [
     BrowserModule,
     HttpModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     AboutPage,
-    ContactPage,
+    UserPage,
     HomePage,
     TabsPage,
     Viewprescription1Page,

@@ -6,7 +6,11 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="myapp1">
+      <ion-buttons end *ngIf="showSkip">
+          <button ion-button (click)="startApp()" color="primary"></button>
+        </ion-buttons>
+      
     <ion-title>Tutorial</ion-title>
   </ion-navbar>
 

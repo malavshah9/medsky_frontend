@@ -1,6 +1,15 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SigninpagePage } from "../signinpage/signinpage";
+
+
+
+export interface Slide {
+  title: string;
+  description: string;
+  image: string;
+}
+
 /**
  * Generated class for the Tutorialpage1Page page.
  *

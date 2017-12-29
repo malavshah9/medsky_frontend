@@ -4,6 +4,7 @@ import { TabsPage } from '../../pages/tabs/tabs';
 import { UserlogProvider } from "../../providers/userlog/userlog";
 import { User_Class } from "../../providers/userlog/user_class";
 import { SignuppagePage } from "../signuppage/signuppage";
+import { Storage } from "@ionic/storage";
 
 /**
  * Generated class for the SigninpagePage page.
@@ -21,7 +22,7 @@ export class SigninpagePage {
   email_id:string='';
   password:string='';
   userObject:User_Class;
-  constructor(public load:LoadingController,public toast:ToastController,public navCtrl: NavController,public _db:UserlogProvider){
+  constructor(public storage:Storage,public load:LoadingController,public toast:ToastController,public navCtrl: NavController,public _db:UserlogProvider){
 
   }
   ionViewDidLoad() {
@@ -34,11 +35,23 @@ export class SigninpagePage {
       duration:2000
     });
     l1.present();*/
-    /*let t1=this.toast.create({
-      message:"Data Added",
-      duration:2000,
-      position:"top"
-    });*/
+    let t1=this.toast.create({
+      message:"Login Successfully",
+      duration:3000,
+      position:"bottom"
+    });
+  let t2=this.toast.create({
+    message:"Enter Valid Data",
+    duration:3000,
+    position:"bottom"
+
+  });
+  let t3=this.toast.create({
+    message:"Enter proper mail id and Password",
+    duration:3000,
+    position:"bottom"
+
+  });
   
     
 
@@ -47,26 +60,27 @@ export class SigninpagePage {
       (x:User_Class[])=>{
        if(this.email_id=='' || this.password=='')
         {
-          alert("Enter Data");
+          t2.present();
         }
         else{
         if(x.length==1){
-          alert('login successfully');
+         /* alert('login successfully');
           let l1=this.load.create({
             content:"Loading...",
             duration:3000
   
           });
-          l1.present();
-         
-          //t1.present();
-          l1.dismissAll();
-        
+          l1.present();*/
+ 
+          t1.present();
+          //l1.dismissAll();
+ 
+          this.storage.set('id',this.email_id);
          
           this.navCtrl.push(TabsPage);
         }
         else{
-          alert('Enter proper mail id and Password');
+         t3.present();
           this.navCtrl.push(SigninpagePage);
         }
       }
@@ -87,6 +101,5 @@ onClick()
 {
   this.navCtrl.push(SignuppagePage);
 }
-    
 
 }
