@@ -15,6 +15,7 @@ export class SearchproProvider {
   constructor(public _http: Http) {
     console.log('Hello SearchproProvider Provider');
   }
+  id:any;
   private url1="http://localhost:3000/doctor/";
   private url2="http://localhost:3000/medicines/";
   getALlDoctors()
@@ -24,6 +25,14 @@ export class SearchproProvider {
   getAllMedicines()
   {
     return this._http.get(this.url2).map((response:Response)=>response.json());
+  }
+  searchMed()
+  {
+    return this._http.get(this.url2+this.id).map((response:Response)=>response.json());
+  }
+  searchDoc()
+  {
+    return this._http.get(this.url1+this.id).map((response:Response)=>response.json());
   }
 
 }

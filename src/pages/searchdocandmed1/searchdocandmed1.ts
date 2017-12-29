@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SearchproProvider } from "../../providers/searchpro/searchpro";
 import { doctor } from "./classdoctor";
 import { medicine } from "./classmedicines";
+import { Searchdocpage1Page } from "../searchdocpage1/searchdocpage1";
+import { Searchmedpage1Page } from "../searchmedpage1/searchmedpage1";
 /**
  * Generated class for the Searchdocandmed1Page page.
  *
@@ -26,6 +28,7 @@ export class Searchdocandmed1Page {
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public searchpro:SearchproProvider) {
   }
+  
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Searchdocandmed1Page');
@@ -67,6 +70,17 @@ export class Searchdocandmed1Page {
       this.matchdoctors=[];
       this.matchmedicines=[];
     }
+  }
+  onClickDoc(item:doctor)
+  {
+      this.navCtrl.push(Searchdocpage1Page,{
+        param1:item.pk_doc_email_id
+      });
+  }
+  onClickMed(item:medicine){
+    this.navCtrl.push(Searchmedpage1Page,{
+      param1:item.pk_med_id
+    });
   }
 
 }
