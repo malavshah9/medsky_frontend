@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import { Viewprescription1Page } from "../viewprescription1/viewprescription1";
 import { Searchdocandmed1Page } from '../searchdocandmed1/searchdocandmed1';
 import { Storage } from "@ionic/storage";
+import { Validators } from '@angular/forms/src/validators';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -12,6 +13,8 @@ export class HomePage {
   
   tabBarElement: any;
   splash = true;
+  
+
 
   constructor(public navCtrl: NavController,public storage:Storage) {
  
@@ -29,14 +32,12 @@ export class HomePage {
     
     
     
-    this.storage.get('id').then((val)=>{
-      alert(val);
-    });       
-   
-  }
+     }
   onViewPrescription()
   {
-      this.navCtrl.push(Viewprescription1Page);    
+   
+      this.navCtrl.push(Viewprescription1Page); 
+      
   }
   onSearch()
   {

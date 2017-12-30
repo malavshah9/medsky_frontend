@@ -17,19 +17,19 @@
     <ion-list>
       <ion-item>
           <ion-label floating>Email Id</ion-label>
-          <ion-input type="email" [(ngModel)]="email_id" name="email"></ion-input>
+          <ion-input type="email" [(ngModel)]="user" name="email" ng-disabled="true"></ion-input>
       </ion-item>
       <ion-item>
           <ion-label floating>Password</ion-label>
-          <ion-input type="password" [(ngModel)]="email_id" name="email"></ion-input>
+          <ion-input type="password" [(ngModel)]="pass" name="email"></ion-input>
       </ion-item>
       <ion-item>
           <ion-label floating>Name</ion-label>
-          <ion-input type="text" [(ngModel)]="email_id" name="email"></ion-input>
+          <ion-input type="text" [(ngModel)]="name" name="email"></ion-input>
       </ion-item>
       <ion-item>
           <ion-label floating>Mobile No</ion-label>
-          <ion-input type="Number" [(ngModel)]="email_id" name="email"></ion-input>
+          <ion-input type="Number" [(ngModel)]="mno" name="email"></ion-input>
       </ion-item>
       <br/>
       <ion-list radio-group [(ngModel)]="Gender">
