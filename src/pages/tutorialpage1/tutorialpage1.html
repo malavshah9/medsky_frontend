@@ -1,81 +1,22 @@
-<!--
-  Generated template for the Tutorialpage1Page page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<!--<ion-header>
-
-  <ion-navbar color="myapp1">
-      <ion-buttons end *ngIf="showSkip">
-          <button ion-button (click)="startApp()" color="primary"></button>
-        </ion-buttons>
-      
-
-   <ion-title>Tutorial</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding class="getstart">
-
-<ion-slides pager >
-  
-    <ion-slide   padding class="getstart">
-        <button ion-button icon-right (click)="onTutorialNext()">
-            Skip
-            <ion-icon name="home"></ion-icon>
-          </button>
-      <h2>Paper Less Presciptions</h2>
-    </ion-slide>
-  
-    <ion-slide padding class="getstart1">
-      <h2>Slide 2</h2>
-    </ion-slide>
-  
-    <ion-slide padding class="getstart2">
-      <h2>Slide 3</h2>
-      <button ion-button icon-right (click)="onTutorialNext()">
-        Next
-        <ion-icon name="home"></ion-icon>
-      </button>
-    </ion-slide>
-  
-  </ion-slides>
-
-
-</ion-content>-->
-<!--<ion-header no-shadow>
-  <ion-navbar>
-    <ion-buttons end *ngIf="showSkip">
-      <button ion-button (click)="startApp()" color="primary"></button>
-    </ion-buttons>
-    <ion-title>Tutorial</ion-title>
-  </ion-navbar>
-</ion-header>-->
 <ion-header>
 
     <ion-navbar color="myapp1">
         <ion-buttons end *ngIf="showSkip">
             <button ion-button (click)="startApp()" color="primary"></button>
           </ion-buttons>
-        
-  
-     <ion-title>Tutorial</ion-title>
+             <ion-title>Tutorial</ion-title>
     </ion-navbar>
-  
   </ion-header>
 
-<ion-content padding>
+  <ion-content padding>
   <ion-slides pager>
     <ion-slide>
       <img src="../../assets/imgs/logo1.png" class="slide-image" />
-      <button ion-button icon-right (click)="onTutorialNext()">
+      <button ion-button icon-right (click)="onTutorialNext()" color="myapp1">
           Skip
           <ion-icon name="home"></ion-icon>
         </button>
-      <h2 class="slide-title">Medsky...</h2>
+      <h2 class="slide-title">Medsky</h2>
     </ion-slide>
     <ion-slide>
       <img src="../../assets/imgs/mad.jpg" class="h" />

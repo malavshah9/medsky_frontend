@@ -5,6 +5,7 @@ import { Http,Response} from "@angular/http";
 //import { Observable } from "rxjs/Observable";
 //below code is new for passing two params in querystring
 import { RequestOptions, URLSearchParams } from '@angular/http';
+import { Storage } from "@ionic/storage";
 import "rxjs/rx";
 /*
   Generated class for the PrescriptionProvider provider.
@@ -14,11 +15,6 @@ import "rxjs/rx";
 */
 @Injectable()
 export class PrescriptionProvider {
-
-  constructor(public _http:Http) {
-    console.log('Hello PrescriptionProvider Provider');
-  }
- // private presc:prescription[]=[];
   private url="http://localhost:3000/prescription/";
   private url2="http://localhost:3000/prescription2/"
   private url3="http://localhost:3000/med/"
@@ -29,36 +25,28 @@ export class PrescriptionProvider {
 
   querystring:String="";
 
+  constructor(public _http:Http,public storage:Storage) {
+    console.log('Hello PrescriptionProvider Provider');
+    this.storage.get('id').then((val)=>{
+          this.uid=val;      
+      });
+  }
+ // private presc:prescription[]=[];
+  
   getPrescription()
   {
-    this.uid="malav@gmail.com";
     return this._http.get(this.url+this.uid).map((response:Response)=>response.json());
   }
   getmedicinename()
   {
-   
-    return this._http.get(this.url3+this.mid).map((response:Response)=>response.json());
+     return this._http.get(this.url3+this.mid).map((response:Response)=>response.json());
   }
   getWholePrescription()
   {
-  return this._http.get(this.url2+this.pid).map((response:Response)=>response.json());
+    return this._http.get(this.url2+this.pid).map((response:Response)=>response.json());
   }
-  getPrescriptionDate(uid,did)
-  {
-
- /*
-    //new code for passing two params in querystring
-    let params: URLSearchParams = new URLSearchParams();
-    params.set('var1', uid);
-    params.set('var2', did);
-
-    let requestOptions = new RequestOptions();
-    requestOptions.search = params;
-    // new code ends
-    */
-
-   
-    return this._http.get(this.url2+(uid+"/"+did)).map((response:Response)=>response.json());
-
+  getPrescriptionDate(did)
+  {  
+    return this._http.get(this.url2+(this.uid+"/"+did)).map((response:Response)=>response.json());
   }
 }

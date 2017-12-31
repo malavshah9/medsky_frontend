@@ -33,7 +33,7 @@ export class Viewprescription2Page {
     });
     loadingdata.present();
    
-    this._dbprescription. getPrescriptionDate(this.uid,this.doc_id).subscribe(
+    this._dbprescription. getPrescriptionDate(this.doc_id).subscribe(
       (data:prescdata[])=>{
         this.allprescdate=data;
         console.log(data);

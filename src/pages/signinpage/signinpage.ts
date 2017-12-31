@@ -22,7 +22,7 @@ export class SigninpagePage {
   email_id:string='';
   password:string='';
   userObject:User_Class;
-  constructor(public storage:Storage,public load:LoadingController,public toast:ToastController,public navCtrl: NavController,public _db:UserlogProvider){
+  constructor(public storage:Storage,public toast:ToastController,public navCtrl: NavController,public _db:UserlogProvider){
 
   }
   ionViewDidLoad() {
@@ -55,7 +55,16 @@ export class SigninpagePage {
   
     
 
-    this._db.Login(new User_Class(0,this.email_id,'','',this.password,'','',0,'',''))
+    this._db.Login(new User_Class(0,
+      this.email_id,
+      '',
+      '',
+      this.password,
+      '',
+      '',
+      0,
+      '',
+      ''))
     .subscribe(
       (x:User_Class[])=>{
        if(this.email_id=='' || this.password=='')
