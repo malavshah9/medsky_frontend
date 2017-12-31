@@ -1,17 +1,58 @@
+
 page-tutorialpage1 {
+    .toolbar-background {
+        background: transparent;
+        border-color: transparent;
+      }
+    
+      .slide-zoom {
+        height: 100%;
+      }
+      .h
+      {
+        height: 70%;
+      }
+    
+      .slide-title {
+        margin-top: 3.8rem;
+      }
+    
+      .slide-image {
+        max-height: 150%;
+        max-width: 100%;
+        margin: 48px 0;
+      }
+    
+      b {
+        font-weight: 500;
+      }
+    
+      p {
+        padding: 0 40px;
+        font-size: 24px;
+        line-height: 1.5;
+        color: #60646B;
+    
+        b {
+          color: #000000;
+        }
+      }
+}
+/*page-tutorialpage1 {
+  
     .getstart {
+        background-image: url('../../assets/imgs/pro3.jpg');
         
-        background-image: url('../../assets/imgs/1.jpg');
         // background: url('../../img/getstart.png');
-        background-repeat: no-repeat;
-        background-size:cover;
+      background-repeat: no-repeat;
+       background-size:auto;
         }
         .getstart1 {
             
             background-image: url('../../assets/imgs/2.jpg');
             // background: url('../../img/getstart.png');
-            background-repeat: no-repeat;
-            background-size:cover;
+            //background-repeat: no-repeat;
+           // background-size:cover;
             }
             .getstart2{
                 
@@ -20,4 +61,4 @@ page-tutorialpage1 {
                 background-repeat: no-repeat;
                 background-size:cover;
                 }
-}
+}*/

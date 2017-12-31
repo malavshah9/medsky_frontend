@@ -33,38 +33,45 @@ export class SignuppagePage {
   {
    let t1=this.toast.create({
       message:"Signup Successfully",
-      duration:2000,
-      position:"top"
+      duration:3000,
+      position:"bottom"
     });
+    let t2=this.toast.create({
+      message:"Enter Email Id",
+      duration:3000,
+      position:"bottom"
+    });
+    let t3=this.toast.create({
+      message:"Enter Password",
+      duration:3000,
+      position:"bottom"
+    });
+    let t4=this.toast.create({
+      message:"Enter Mobile No",
+      duration:3000,
+      position:"bottom"
+    });
+  
     this.data.addUser(new User_Class(0,this.email_id,'',this.mno,this.password,'','',0,'',''))
    .subscribe(
 
      (data:User_Class[])=>{
        if(this.email_id=='')
-
        {
-         /* let t2=this.toast.create({
-          message:"Please Enter Valid Data",
-          duration:2000,
-          position:"top"
-         });*/
-        alert("Enter Valid Data");
+        t2.present();
         this.navCtrl.push(SignuppagePage);
        }
        if(this.password=='')
        {
-         alert("enter password");
+        t3.present();
        }
        if(this.mno=='')
        {
-        alert("enter Mobile No");
+        t4.present();
        }
        else{
-             
         t1.present();
-        
         this.navCtrl.push(TabsPage);
-        
        }
      },
      function(error){

@@ -1,0 +1,61 @@
+<!--
+  Generated template for the UserPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>User</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list>
+      <ion-item>
+          <ion-label floating>Email Id</ion-label>
+          <ion-input type="email" [(ngModel)]="user" name="email" ng-disabled="true"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label floating>Password</ion-label>
+          <ion-input type="password" [(ngModel)]="pass" name="email"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label floating>Name</ion-label>
+          <ion-input type="text" [(ngModel)]="name" name="email"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label floating>Mobile No</ion-label>
+          <ion-input type="Number" [(ngModel)]="mno" name="email"></ion-input>
+      </ion-item>
+      <br/>
+      <ion-list radio-group [(ngModel)]="Gender">
+        <ion-item>
+          <ion-label>Male</ion-label>
+          <ion-radio value="Male" checked></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Female</ion-label>
+          <ion-radio value="female"></ion-radio>
+        </ion-item>
+        </ion-list>      
+        
+    
+         
+        <div padding>
+          <button ion-button round (click)="onChangePassClick()" color="myapp1" block>Change Password</button>
+          <button ion-button round (click)="onEditClick()" color="myapp1" block>Edit Profile</button>
+        </div>
+        
+    
+   
+   
+        <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
+          {{ item }}
+        </button>  
+      </ion-list>
+
+</ion-content>
