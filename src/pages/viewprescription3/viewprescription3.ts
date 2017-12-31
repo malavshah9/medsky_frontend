@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams,LoadingController,ToastController }
 import { PrescriptionProvider } from "../../providers/prescription/prescription";
 import { prescription3 } from "./classprescription3";
 import { medicinesnames } from "./classmedicinenames";
-
+import { presc } from './classprescc';
 
 /**
  * Generated class for the Viewprescription3Page page.
@@ -20,9 +20,12 @@ import { medicinesnames } from "./classmedicinenames";
 export class Viewprescription3Page {
  
   pk_pres_id:Number;
+  datas:presc[];
+  
 //  prescriptions:prescription3[]=[];
  //prescription details
- i:Number=0;
+// i:Number=0;
+
  doc_name:String;
  pres_date:String;
   medicines:String;
@@ -37,7 +40,10 @@ export class Viewprescription3Page {
           ins_array:String[]=[];
  days:String;
           day_array:String[]=[];
-
+    
+          
+           
+             
  
  medicine_name:String[]=[];
  medicine_type:String[]=[];
@@ -82,10 +88,34 @@ this.mor_array=this.mornings.split(',');
 this.non_array=this.noons.split(',');
 this.nig_array=this.nights.split(',');
 
-this.initData();
 
-//----//
-  },
+this.initData(this.medicine_name);
+/*for(let item of this.medicine_name)
+{
+  this.datas.push({med_name:item});
+}*/
+/*
+for(let data of this.displayData,let itm of this.medicine_name)
+{
+ * data.medicinename="";
+}*/
+
+/*for(let it of this.day_array)
+{
+  alert(" viewprescription3.ts ma "+it);
+  
+}
+alert("viewprrescription ma length aa 6" +this.day_array.length);
+var i=0;
+for(i=0;i<this.day_array.length;i++)
+{
+
+}*/
+
+
+
+
+},
   function(error){
     console.log("error"+error)
   },
@@ -105,7 +135,7 @@ this.instr=this.prescriptions.pres_instr;
 this.days=this.prescriptions.pres_date;
   */  
   }
-  initData()
+  initData(items:any[])
   {
     for(let item of this.medicinenames)
     {
@@ -118,6 +148,7 @@ this.days=this.prescriptions.pres_date;
           for(let item of data)
           {
             this.medicine_name.push(item.med_name);
+            
             this.medicine_type.push(item.med_type);
            }
         
@@ -128,12 +159,18 @@ this.days=this.prescriptions.pres_date;
       function()
       {
         console.log("Success");
-       
+       // this.initData1();
+      
        
       }
     );
     }
+    
+    
+   
    }
+   
   
 }
 
+  

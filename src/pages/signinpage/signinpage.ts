@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController,LoadingController,ToastController} from 'ionic-angular';
+import { IonicPage, NavController,ToastController} from 'ionic-angular';
 import { TabsPage } from '../../pages/tabs/tabs';
 import { UserlogProvider } from "../../providers/userlog/userlog";
 import { User_Class } from "../../providers/userlog/user_class";
@@ -21,7 +21,7 @@ export class SigninpagePage {
   email_id:string='';
   password:string='';
   userObject:User_Class;
-  constructor(public load:LoadingController,public toast:ToastController,public navCtrl: NavController,public _db:UserlogProvider){
+  constructor(public toast:ToastController,public navCtrl: NavController,public _db:UserlogProvider){
 
   }
   ionViewDidLoad() {
@@ -52,15 +52,9 @@ export class SigninpagePage {
         else{
         if(x.length==1){
           alert('login successfully');
-          let l1=this.load.create({
-            content:"Loading...",
-            duration:3000
-  
-          });
-          l1.present();
-         
+        
           //t1.present();
-          l1.dismissAll();
+          
         
          
           this.navCtrl.push(TabsPage);
