@@ -10,14 +10,13 @@
   <ion-card *ngFor="let i of bg">
 
   <ion-item>
-    <ion-avatar item-start>
-      <img src="assets/imgs/parth.ico">
-    </ion-avatar>
+    
+    
     <h2>{{i.fk_doc_email_id}}</h2>
     <p>{{i.fk_spec_id}}</p>
   </ion-item>
 
-  <img src="assets/imgs/blog1.jpg">
+  
 
   <ion-card-content>
     <p>{{i.blog_title}}</p>
@@ -35,7 +34,7 @@
     <ion-col>
       <button ion-button icon-left clear small (tap)="tapv($event)" style="cursor:pointer;"  >
         <ion-icon name="text"></ion-icon>
-        <div>{{comment}} Comments</div>
+        <div>{{comment}} Share</div>
       </button>
     </ion-col>
     <ion-col center text-center>
