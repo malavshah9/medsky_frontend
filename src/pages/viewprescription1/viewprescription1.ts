@@ -19,11 +19,36 @@ import { Viewprescription2Page } from "../viewprescription2/viewprescription2";
 export class Viewprescription1Page {
 
   allpresc:prescription[]=[];
-  constructor(public navCtrl: NavController, public navParams: NavParams,public loadingcontroller:LoadingController,public _dbprescription:PrescriptionProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public loadingcontroller:LoadingController,public _dbprescription:PrescriptionProvider,public toast:ToastController) {
+  }
+  doRefresh(refresher){
+   
+    
+    this._dbprescription.getPrescription().subscribe(
+      (data:prescription[])=>{
+        this.allpresc=data;
+        console.log(data);
+      },
+      function(error){
+        console.log("error"+error)
+      },
+      function()
+      {
+        console.log("Success");
+       
+      }
+    );
+    refresher.complete();
+
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Viewprescription1Page');
+    let t1=this.toast.create({
+      message:"Pull Down to Refresh Content",
+      duration:5000,
+      position:"bottom"
+    });
     
     let loadingdata=this.loadingcontroller.create({
       content:"Fetching your prescriptions"
@@ -44,7 +69,9 @@ export class Viewprescription1Page {
         loadingdata.dismiss()
       }
     );
+    t1.present();
   }
+  
   onViewDoctor(item:prescription)
   {
     this.navCtrl.push(Viewprescription2Page,{
