@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HttpModule } from '@angular/http';
+import { HttpClientModule } from "@angular/common/http";
 import { IonicStorageModule } from '@ionic/storage';
 
 import { AboutPage } from '../pages/about/about';
@@ -26,6 +27,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { PrescriptionProvider } from '../providers/prescription/prescription';
 import { SearchproProvider } from '../providers/searchpro/searchpro';
 import { UserlogProvider } from "../providers/userlog/userlog";
+import { BlogdbProvider } from '../providers/blogdb/blogdb';
 //import { Tutorialpage1Page } from '../pages/tutorialpage1/tutorialpage1';
 
 
@@ -49,6 +51,7 @@ import { UserlogProvider } from "../providers/userlog/userlog";
   imports: [
     BrowserModule,
     HttpModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot()
   ],
@@ -78,7 +81,8 @@ import { UserlogProvider } from "../providers/userlog/userlog";
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     PrescriptionProvider,
     SearchproProvider,
-    UserlogProvider
+    UserlogProvider,
+    BlogdbProvider
   ]
 })
 export class AppModule {}

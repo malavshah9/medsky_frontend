@@ -1,11 +1,51 @@
 <ion-header>
   <ion-navbar color="myapp1">
     <ion-title>
-      About
+      Blogs
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+  <ion-card *ngFor="let i of bg">
+
+  <ion-item>
+    <ion-avatar item-start>
+      <img src="assets/imgs/parth.ico">
+    </ion-avatar>
+    <h2>{{i.fk_doc_email_id}}</h2>
+    <p>{{i.fk_spec_id}}</p>
+  </ion-item>
+
+  <img src="assets/imgs/blog1.jpg">
+
+  <ion-card-content>
+    <p>{{i.blog_title}}</p>
+     <p>Your Answers:</p>
+    <p>{{i.blog_desc}}</p>
+  </ion-card-content>
+
+  <ion-row>
+    <ion-col>
+      <button ion-button icon-left clear small (tap)="tapev($event)" style="cursor:pointer;"  >
+        <ion-icon name="thumbs-up" ></ion-icon>
+        <div>{{like}} Likes</div>
+      </button>
+    </ion-col>
+    <ion-col>
+      <button ion-button icon-left clear small (tap)="tapv($event)" style="cursor:pointer;"  >
+        <ion-icon name="text"></ion-icon>
+        <div>{{comment}} Comments</div>
+      </button>
+    </ion-col>
+    <ion-col center text-center>
+      <ion-note>
+        {{i.blog_date}}
+      </ion-note>
+    </ion-col>
+  </ion-row>
+
+</ion-card>
+
 
 </ion-content>
