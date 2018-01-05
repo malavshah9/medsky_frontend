@@ -20,6 +20,7 @@ import { Viewprescription2Page } from "../pages/viewprescription2/viewprescripti
 import { Viewprescription3Page } from "../pages/viewprescription3/viewprescription3";
 import { Searchdocpage1Page } from '../pages/searchdocpage1/searchdocpage1'
 import { Searchmedpage1Page } from "../pages/searchmedpage1/searchmedpage1";
+import { ChatwithbotPage } from "../pages/chatwithbot/chatwithbot";
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -28,6 +29,7 @@ import { PrescriptionProvider } from '../providers/prescription/prescription';
 import { SearchproProvider } from '../providers/searchpro/searchpro';
 import { UserlogProvider } from "../providers/userlog/userlog";
 import { BlogdbProvider } from '../providers/blogdb/blogdb';
+import { BlogdescriptionPage } from "../pages/blogdescription/blogdescription";
 //import { Tutorialpage1Page } from '../pages/tutorialpage1/tutorialpage1';
 
 
@@ -46,7 +48,9 @@ import { BlogdbProvider } from '../providers/blogdb/blogdb';
     Viewprescription2Page,
     Viewprescription3Page,
     Searchmedpage1Page,
-    Searchdocpage1Page
+    Searchdocpage1Page,
+    ChatwithbotPage,
+    BlogdescriptionPage
   ],
   imports: [
     BrowserModule,
@@ -73,7 +77,10 @@ import { BlogdbProvider } from '../providers/blogdb/blogdb';
     Viewprescription3Page,
 
     Searchmedpage1Page,
-    Searchdocpage1Page
+    Searchdocpage1Page,
+
+    ChatwithbotPage,
+    BlogdescriptionPage
   ],
   providers: [
     StatusBar,
