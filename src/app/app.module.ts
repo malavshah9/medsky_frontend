@@ -26,6 +26,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { PrescriptionProvider } from '../providers/prescription/prescription';
 import { SearchproProvider } from '../providers/searchpro/searchpro';
 import { UserlogProvider } from "../providers/userlog/userlog";
+import { ChangepassPage } from '../pages/changepass/changepass';
+import { ForgetpassPage } from "../pages/forgetpass/forgetpass";
 //import { Tutorialpage1Page } from '../pages/tutorialpage1/tutorialpage1';
 
 
@@ -44,7 +46,9 @@ import { UserlogProvider } from "../providers/userlog/userlog";
     Viewprescription2Page,
     Viewprescription3Page,
     Searchmedpage1Page,
-    Searchdocpage1Page
+    Searchdocpage1Page,
+    ChangepassPage,
+    ForgetpassPage
   ],
   imports: [
     BrowserModule,
@@ -70,7 +74,9 @@ import { UserlogProvider } from "../providers/userlog/userlog";
     Viewprescription3Page,
 
     Searchmedpage1Page,
-    Searchdocpage1Page
+    Searchdocpage1Page,
+    ChangepassPage,
+    ForgetpassPage
   ],
   providers: [
     StatusBar,

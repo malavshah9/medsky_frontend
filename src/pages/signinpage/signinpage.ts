@@ -5,6 +5,10 @@ import { UserlogProvider } from "../../providers/userlog/userlog";
 import { User_Class } from "../../providers/userlog/user_class";
 import { SignuppagePage } from "../signuppage/signuppage";
 import { Storage } from "@ionic/storage";
+import { email_class } from "../../providers/userlog/email";
+import { AboutPage } from '../about/about';
+import { ForgetpassPage } from "../forgetpass/forgetpass";
+ 
 
 /**
  * Generated class for the SigninpagePage page.
@@ -21,7 +25,9 @@ import { Storage } from "@ionic/storage";
 export class SigninpagePage {
   email_id:string='';
   password:string='';
-  userObject:User_Class;
+  usr:User_Class[];
+  mailobj:email_class[]=[];
+  msg:string='';
   constructor(public storage:Storage,public toast:ToastController,public navCtrl: NavController,public _db:UserlogProvider){
 
   }
@@ -111,4 +117,72 @@ onClick()
   this.navCtrl.push(SignuppagePage);
 }
 
+forgotPassword()
+{
+  
+
+      
+    
+    //let item=new Users(this.id,this.email,this.name,this.mobno,this.img,this.pass,this.dpass);
+  //  alert(this.email);
+    // let item=new Users(this.id,this.email,this.name,this.mobno,this.img,this.pass,this.dpass);
+    this._db.getUser(this.email_id).subscribe(
+      (data:User_Class[])=>{
+        if(data.length==1)
+        {
+          alert("hello");
+          var message="Hello "+data[0].usr_name+". You have requested to reset the password. your password is '"+data[0].usr_pass+"'. Password is one of the confidential thing, Don't share it with anyone.";
+            this._db.sendemail(new email_class(message,this.email_id,"Resetting the password of Expense Tracker.")).subscribe(
+              (data1:any)=>{
+                console.log("mail sent");
+                alert("The Password has been sent to "+this.email_id);
+              },
+              
+            );
+        }
+        else
+        {
+          this.msg="You have entered incorrect email id. Please enter the email id you used to login with.";
+        }
+      },
+      function(err){},
+      function(){}
+);
+  }
+
+onForget()
+{
+  this.navCtrl.push(ForgetpassPage);
+  
+    /*let prompt = this.alert.create({
+      title: 'Forgot Password',
+      message: "Enter Your Email Id To Get Your Password",
+      inputs: [
+        {
+          name: 'name',
+          placeholder: 'Email_id'
+        },
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+          handler: data => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Send',
+          handler: data => {
+            this.email_id = data.name;
+            //this.forgotPassword();
+          }
+        }
+      ]
+    });
+    prompt.present();*/
+  }
+ 
+
 }
+
+

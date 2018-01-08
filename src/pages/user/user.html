@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+    <ion-navbar color="myapp1">
     <ion-title>User</ion-title>
   </ion-navbar>
 
@@ -17,19 +17,19 @@
     <ion-list>
       <ion-item>
           <ion-label floating>Email Id</ion-label>
-          <ion-input type="email" [(ngModel)]="user" name="email" ng-disabled="true"></ion-input>
+          <ion-input type="email" [(ngModel)]="user" name="email" readonly></ion-input>
       </ion-item>
-      <ion-item>
+    <!--  <ion-item>
           <ion-label floating>Password</ion-label>
-          <ion-input type="password" [(ngModel)]="pass" name="email"></ion-input>
+          <ion-input type="password" [(ngModel)]="pass" name="pass" readonly></ion-input>
       </ion-item>
-      <ion-item>
+     <ion-item>
           <ion-label floating>Name</ion-label>
-          <ion-input type="text" [(ngModel)]="name" name="email"></ion-input>
-      </ion-item>
+          <ion-input type="text" [(ngModel)]="name" name="name"readonly></ion-input>
+      </ion-item>-->
       <ion-item>
           <ion-label floating>Mobile No</ion-label>
-          <ion-input type="Number" [(ngModel)]="mno" name="email"></ion-input>
+          <ion-input type="Number" [(ngModel)]="mno" name="mno" readonly></ion-input>
       </ion-item>
       <br/>
       <ion-list radio-group [(ngModel)]="Gender">
@@ -41,7 +41,7 @@
           <ion-label>Female</ion-label>
           <ion-radio value="female"></ion-radio>
         </ion-item>
-        </ion-list>      
+        </ion-list>    
         
     
          

@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Storage } from "@ionic/storage";
 import { UserlogProvider } from "../../providers/userlog/userlog";
 import { User_Class } from "../../providers/userlog/user_class";
+import { AboutPage } from '../about/about';
+import { ChangepassPage } from "../changepass/changepass";
 /**
  * Generated class for the UserPage page.
  *
@@ -18,7 +20,7 @@ import { User_Class } from "../../providers/userlog/user_class";
 export class UserPage {
 
   user:string='';
-  usr:User_Class;
+  usr:User_Class[]=[];
   pass:string='';
   name:string='';
   mno:string;
@@ -30,11 +32,12 @@ export class UserPage {
     this.storage.get('id').then((val)=>{
     this.user=val;
     this.udata.getUser(this.user).subscribe(
-      (data:any)=>{
+      (data:User_Class[])=>{
         this.usr=data;
-        this.pass=this.usr.usr_pass;
-        this.name=this.usr.usr_name;
-        this.mno=this.usr.usr_mno;
+        this.pass=this.usr[0].usr_pass;
+        this.name=this.usr[0].usr_name;
+        this.mno=this.usr[0].usr_mno;
+        
 
       },
       function(err){},
@@ -43,6 +46,10 @@ export class UserPage {
     });       
    
 
+  }
+  onChangePassClick()
+  {
+    this.navCtrl.push(ChangepassPage);
   }
 
 }
