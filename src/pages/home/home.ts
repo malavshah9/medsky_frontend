@@ -4,6 +4,7 @@ import { Viewprescription1Page } from "../viewprescription1/viewprescription1";
 import { Searchdocandmed1Page } from '../searchdocandmed1/searchdocandmed1';
 import { Storage } from "@ionic/storage";
 import { Validators } from '@angular/forms/src/validators';
+import { ChatwithbotPage } from "../chatwithbot/chatwithbot";
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -43,5 +44,8 @@ export class HomePage {
   {
     this.navCtrl.push(Searchdocandmed1Page);
   }
- 
+  onChat()
+  {
+    this.navCtrl.push(ChatwithbotPage);
+  }
 }
