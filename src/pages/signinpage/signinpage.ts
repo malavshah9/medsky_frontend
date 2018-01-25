@@ -91,6 +91,7 @@ export class SigninpagePage {
           //l1.dismissAll();
  
           this.storage.set('id',this.email_id);
+          this.storage.set('pass',this.password);
          
           this.navCtrl.push(TabsPage);
         }

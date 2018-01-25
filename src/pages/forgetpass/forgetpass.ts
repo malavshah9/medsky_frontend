@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,ToastController } from 'ionic-angular';
 import { UserlogProvider } from "../../providers/userlog/userlog";
 import { User_Class } from "../../providers/userlog/user_class";
 import { email_class } from "../../providers/userlog/email";
@@ -19,7 +19,7 @@ import { email_class } from "../../providers/userlog/email";
 })
 export class ForgetpassPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public _db:UserlogProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public _db:UserlogProvider,public toast:ToastController) {
   }
   email_id:string='';
   password:string='';
@@ -31,25 +31,23 @@ export class ForgetpassPage {
   }
   forgotPassword()
 {
-  
-
-      
-    
-    //let item=new Users(this.id,this.email,this.name,this.mobno,this.img,this.pass,this.dpass);
-  //  alert(this.email);
-    // let item=new Users(this.id,this.email,this.name,this.mobno,this.img,this.pass,this.dpass);
-    alert("ywaa");
+  let t1=this.toast.create({
+    message:"The Password has been sent to "+this.email_id,
+    duration:3000,
+    position:"bottom"
+  });    
     this._db.getUser(this.email_id).subscribe(
       (data:User_Class[])=>{
-       //  alert("hiii");
+       
         if(data.length===1)
         {
-          alert("hello");
+          
           var message="Hello "+data[0].usr_name+". You have requested to reset the password. your password is '"+data[0].usr_pass+"'. Password is one of the confidential thing, Don't share it with anyone.";
             this._db.sendemail(new email_class(message,this.email_id,"Resetting the password of Expense Tracker.")).subscribe(
               (data1:any)=>{
                 console.log("mail sent");
-                alert("The Password has been sent to "+this.email_id);
+                //alert("The Password has been sent to "+this.email_id);
+                t1.present();
               },
               
             );
@@ -67,22 +65,7 @@ export class ForgetpassPage {
   {
     
     this.forgotPassword();
-    /*buttons: [
-      {
-        text: 'Cancel',
-        handler: data => {
-          console.log('Cancel clicked');
-        }
-      },
-      {
-        text: 'Send',
-        handler: data => {
-          this.email_id = data.name;
-          //this.forgotPassword();
-        }
-      }
-    ]*/
-
+   
   }
 
 

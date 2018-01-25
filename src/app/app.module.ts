@@ -21,20 +21,15 @@ import { Viewprescription3Page } from "../pages/viewprescription3/viewprescripti
 import { Searchdocpage1Page } from '../pages/searchdocpage1/searchdocpage1'
 import { Searchmedpage1Page } from "../pages/searchmedpage1/searchmedpage1";
 import { ChatwithbotPage } from "../pages/chatwithbot/chatwithbot";
-
+import { BlogdbProvider } from "../providers/blogdb/blogdb";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { PrescriptionProvider } from '../providers/prescription/prescription';
 import { SearchproProvider } from '../providers/searchpro/searchpro';
 import { UserlogProvider } from "../providers/userlog/userlog";
-<<<<<<< HEAD
 import { ChangepassPage } from '../pages/changepass/changepass';
 import { ForgetpassPage } from "../pages/forgetpass/forgetpass";
-=======
-import { BlogdbProvider } from '../providers/blogdb/blogdb';
-import { BlogdescriptionPage } from "../pages/blogdescription/blogdescription";
->>>>>>> 1369b572788bb4069e9d01917e8795a66243a907
 //import { Tutorialpage1Page } from '../pages/tutorialpage1/tutorialpage1';
 
 
@@ -54,13 +49,8 @@ import { BlogdescriptionPage } from "../pages/blogdescription/blogdescription";
     Viewprescription3Page,
     Searchmedpage1Page,
     Searchdocpage1Page,
-<<<<<<< HEAD
     ChangepassPage,
     ForgetpassPage
-=======
-    ChatwithbotPage,
-    BlogdescriptionPage
->>>>>>> 1369b572788bb4069e9d01917e8795a66243a907
   ],
   imports: [
     BrowserModule,
@@ -88,14 +78,8 @@ import { BlogdescriptionPage } from "../pages/blogdescription/blogdescription";
 
     Searchmedpage1Page,
     Searchdocpage1Page,
-<<<<<<< HEAD
     ChangepassPage,
     ForgetpassPage
-=======
-
-    ChatwithbotPage,
-    BlogdescriptionPage
->>>>>>> 1369b572788bb4069e9d01917e8795a66243a907
   ],
   providers: [
     StatusBar,
