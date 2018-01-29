@@ -1,0 +1,50 @@
+<!--
+  Generated template for the AddremiderpagePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  
+    <ion-navbar color="myapp1">
+  <ion-buttons start>
+      <button ion-button color="white" clear left on-tap="dismissmodal()">Cancel</button>
+    </ion-buttons>
+    <form [formGroup]="addreminderformgroup" (ngSubmit)="logForm()">
+      <ion-title>Add Reminder Page</ion-title>
+      
+    <ion-buttons end>
+      <button ion-button color="white" type="submit" [disabled]="!addreminderformgroup.valid" clear right  on-tap="addEvent()">OK</button>
+    </ion-buttons>
+    </form>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding>
+    <form [formGroup]="addreminderformgroup" (ngSubmit)="logForm()">
+      <ion-item>
+        <ion-label>Medicine Name</ion-label>
+        <ion-input type="text" formControlName="medicineReminder" [(ngModel)]="medicineName"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Description</ion-label>
+        <ion-textarea formControlName="reminderDesc" [(ngModel)]="reminderDesc"></ion-textarea>
+      </ion-item>
+      
+    
+  
+    
+    
+    <ion-item>
+      <ion-label> Start Date</ion-label>
+      <ion-datetime  displayFormat="DD/MM/YY HH:mm" formControlName="startDates" pickerFormat="DD/MM/YY HH:mm" [(ngModel)]="startDate"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>End Date</ion-label>
+      <ion-datetime displayFormat="DD/MM/YY HH:mm" formControlName="endDates" pickerFormat="DD/MM/YY HH:mm" [(ngModel)]="endDate"></ion-datetime>
+    </ion-item> 
+  </form>  
+  </ion-content>
+  

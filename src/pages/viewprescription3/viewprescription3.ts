@@ -99,7 +99,6 @@ this.initData(this.medicine_name);
    {
     this._dbprescription.mid=item;
     i=this.medicinenames.indexOf(this._dbprescription.mid);
-    alert(i);
     this.indexing.push(i.toString());
     
     

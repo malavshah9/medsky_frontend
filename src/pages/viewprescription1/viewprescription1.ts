@@ -41,8 +41,7 @@ export class Viewprescription1Page {
     refresher.complete();
 
   }
-
-  ionViewDidLoad() {
+  ionViewWillEnter() {
     console.log('ionViewDidLoad Viewprescription1Page');
     let t1=this.toast.create({
       message:"Pull Down to Refresh Content",
@@ -72,11 +71,23 @@ export class Viewprescription1Page {
     t1.present();
   }
   
+  ionViewDidLoad() {
+    this.ionViewWillEnter();
+  }
+  
   onViewDoctor(item:prescription)
   {
     this.navCtrl.push(Viewprescription2Page,{
       param1:item.fk_doc_email_id
     });
+  }
+  loadPresc()
+  {
+    this.ionViewDidLoad();
+  }
+  share(item)
+  {
+    
   }
 
 }

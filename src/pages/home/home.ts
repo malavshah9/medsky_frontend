@@ -5,6 +5,7 @@ import { Searchdocandmed1Page } from '../searchdocandmed1/searchdocandmed1';
 import { Storage } from "@ionic/storage";
 import { Validators } from '@angular/forms/src/validators';
 import { ChatwithbotPage } from "../chatwithbot/chatwithbot";
+import { ViewreminderpagePage } from "../viewreminderpage/viewreminderpage";
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -39,6 +40,10 @@ export class HomePage {
    
       this.navCtrl.push(Viewprescription1Page); 
       
+  }
+  onViewReminders()
+  {
+      this.navCtrl.push(ViewreminderpagePage);
   }
   onSearch()
   {
