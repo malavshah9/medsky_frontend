@@ -30,13 +30,12 @@ import { SearchproProvider } from '../providers/searchpro/searchpro';
 import { UserlogProvider } from "../providers/userlog/userlog";
 import { ChangepassPage } from '../pages/changepass/changepass';
 import { ForgetpassPage } from "../pages/forgetpass/forgetpass";
-//import { Tutorialpage1Page } from '../pages/tutorialpage1/tutorialpage1';
 
-//calender section
 import { Calendar } from '@ionic-native/calendar';
 import { ReminderproviderProvider } from '../providers/reminderprovider/reminderprovider';
 import { ViewreminderpagePage } from "../pages/viewreminderpage/viewreminderpage";
 import { AddremiderpagePage } from "../pages/addremiderpage/addremiderpage";
+import { BlogdescriptionPage } from "../pages/blogdescription/blogdescription";
 
 @NgModule({
   declarations: [
@@ -58,7 +57,8 @@ import { AddremiderpagePage } from "../pages/addremiderpage/addremiderpage";
     ForgetpassPage,
     ChatwithbotPage,
     AddremiderpagePage,
-    ViewreminderpagePage
+    ViewreminderpagePage,
+    BlogdescriptionPage
   ],
   imports: [
     BrowserModule,
@@ -90,7 +90,8 @@ import { AddremiderpagePage } from "../pages/addremiderpage/addremiderpage";
     ForgetpassPage,
     ChatwithbotPage,
     ViewreminderpagePage,
-    AddremiderpagePage
+    AddremiderpagePage,
+    BlogdescriptionPage
   ],
   providers: [
     StatusBar,
