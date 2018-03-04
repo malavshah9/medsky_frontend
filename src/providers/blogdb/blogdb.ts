@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { blog } from '../../pages/about/blog';
 /*
@@ -9,8 +9,9 @@ import { blog } from '../../pages/about/blog';
 */
 @Injectable()
 export class BlogdbProvider {
-  url:string = "http://localhost:3000/blog";
-
+  url:string = "http://localhost:3000/blog/";
+  url2:string = "http://localhost:3000/blog_likes/";
+  url3:string = "http://localhost:3000/likeEmail/";
   constructor(public http: HttpClient) {
     console.log('Hello BlogdbProvider Provider');
   }
@@ -18,4 +19,21 @@ export class BlogdbProvider {
     return this.http.get(this.url);
   }
 
+  getLikeEmail(id,email){
+    return this.http.get(this.url3+id+'/'+email);
+  }
+
+  getblogLikes(id){
+    return this.http.get(this.url2+id);
+  }
+
+  addLikes(item){
+    let body= JSON.stringify(item);
+    return this.http.post(this.url2,body,{headers: new HttpHeaders().set('Content-Type','application/json')});
+  }
+
+  deleteLikes(id,email)
+  {
+    return this.http.delete(this.url2+id+'/'+email,{headers: new HttpHeaders().set('Content-Type','application/json')});
+  }
 }

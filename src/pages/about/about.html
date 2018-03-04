@@ -26,15 +26,19 @@
 
   <ion-row>
     <ion-col>
-      <button ion-button icon-left clear small (tap)="tapev($event)" style="cursor:pointer;"  >
+      <button *ngIf="i.likes!=0" ion-button icon-left clear small (tap)="tapev(i)" style="cursor:pointer;"  >
         <ion-icon name="thumbs-up" ></ion-icon>
-        <div>{{like}} Likes</div>
+        <div>{{i.likes}} Likes</div>
+      </button>
+      <button *ngIf="i.likes==0" ion-button icon-left clear small (tap)="tapev(i)" style="cursor:pointer;"  >
+        <ion-icon name="thumbs-up" ></ion-icon>
+        <div>{{i.likes}} Likes</div>
       </button>
     </ion-col>
     <ion-col>
-      <button ion-button icon-left clear small (tap)="tapv($event)" style="cursor:pointer;"  >
-        <ion-icon name="text"></ion-icon>
-        <div>{{comment}} Share</div>
+      <button ion-button icon-left clear small (click)="menu(i)" style="cursor:pointer;"  >
+        <ion-icon name="share"></ion-icon>
+        <div>Share</div>
       </button>
     </ion-col>
     <ion-col center text-center>

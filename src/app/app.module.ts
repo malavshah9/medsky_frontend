@@ -5,6 +5,7 @@ import { MyApp } from './app.component';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from "@angular/common/http";
 import { IonicStorageModule } from '@ionic/storage';
+import { SocialSharing } from "@ionic-native/social-sharing";
 
 import { AboutPage } from '../pages/about/about';
 import { UserPage } from "../pages/user/user";
@@ -82,7 +83,8 @@ import { BlogdbProvider } from '../providers/blogdb/blogdb';
     PrescriptionProvider,
     SearchproProvider,
     UserlogProvider,
-    BlogdbProvider
+    BlogdbProvider,
+    SocialSharing
   ]
 })
 export class AppModule {}
