@@ -18,6 +18,7 @@ import { prescription3 } from "./classprescription3";
   templateUrl: 'viewprescription3.html',
 })
 export class Viewprescription3Page {
+indexing:String[]=[];
 pk_pres_id:Number;
 doc_name:String;
 pres_date:String;
@@ -35,7 +36,8 @@ day_array:String[]=[];
 medicine_name:String[]=[];
 medicine_type:String[]=[];
 medicinenames:String[]=[];
-
+sortedmedname:String[]=[];
+temp:String;
   constructor(public navCtrl: NavController, public navParams: NavParams,public loadingcontroller:LoadingController,public _dbprescription:PrescriptionProvider) {
 
   }
@@ -74,6 +76,9 @@ this.mor_array=this.mornings.split(',');
 this.non_array=this.noons.split(',');
 this.nig_array=this.nights.split(',');
 this.initData(this.medicine_name);
+
+ 
+
 },
   function(error){
     console.log("error"+error)
@@ -89,10 +94,14 @@ this.initData(this.medicine_name);
   }
   initData(items:any[])
   {
-    for(let item of this.medicinenames)
-    {
-      
-      this._dbprescription.mid=item;
+    var i:Number;
+   for(let item of this.medicinenames)
+   {
+    this._dbprescription.mid=item;
+    i=this.medicinenames.indexOf(this._dbprescription.mid);
+    this.indexing.push(i.toString());
+    
+    
       this._dbprescription. getmedicinename()
       .subscribe(
         (data:any[])=>{
@@ -111,10 +120,40 @@ this.initData(this.medicine_name);
       function()
       {
         console.log("Success");
+       
       }
     );
-   }
- }
+  }
+ //this.sortData();
+}
+      sortData()
+      {
+        var i=0;
+        var j=0;
+        var t,s;
+        
+        i=this.indexing.length;
+        alert("indexing  ->length " + i);
+        for(j=0;j<i;j++)
+        {
+          if(this.indexing[j] != this.medicinenames[j])
+          {
+                t=this.medicinenames[j];
+                s=this.indexing[j];
+                this.temp=this.medicine_name[t];
+                this.medicine_name[t]=this.medicine_name[s];
+                this.medicine_name[s]=this.temp;
+                
+          }
+        }
+        for(j=0;j<i;j++)
+        {
+            this.medicine_name.shift();
+         
+        }
+      }
+
+ 
 }
 
   

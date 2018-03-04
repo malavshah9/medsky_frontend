@@ -33,7 +33,7 @@
     </ion-card-content>
   </ion-card>
 -->
-  <ion-card>
+  <ion-card  (click)="onViewReminders()">
     <ion-card-header>
       <ion-icon name="alarm"  class="ionicons1"></ion-icon> Add to Reminder
     </ion-card-header>
@@ -47,6 +47,14 @@
     </ion-card-header>
     <ion-card-content>
       Here you can search Medicines and Doctors both.
+    </ion-card-content>
+  </ion-card>
+  <ion-card (click)="onChat()">
+    <ion-card-header>
+      <ion-icon name="search"  class="ionicons1"></ion-icon>Chat With Our Bot
+    </ion-card-header>
+    <ion-card-content>
+      Here you can chat with our bot.Get some answers for deases as per symtones.
     </ion-card-content>
   </ion-card>
 

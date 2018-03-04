@@ -1,17 +1,26 @@
 import { Storage } from "@ionic/storage";
 import { Component } from '@angular/core';
+<<<<<<< HEAD
 import { ToastController, NavController } from 'ionic-angular';
+=======
+import { NavController,ToastController } from 'ionic-angular';
+>>>>>>> a9abc2ea8ce07410f7bedc0b5da33b9de5457ac7
 import { BlogdbProvider } from "../../providers/blogdb/blogdb";
 import { SocialSharing } from "@ionic-native/social-sharing";
 import { blog } from "./blog";
+<<<<<<< HEAD
 import { like } from "./like";
 
 
+=======
+import { BlogdescriptionPage} from "../blogdescription/blogdescription";
+>>>>>>> a9abc2ea8ce07410f7bedc0b5da33b9de5457ac7
 @Component({
   selector: 'page-about',
   templateUrl: 'about.html'
 })
 export class AboutPage {
+<<<<<<< HEAD
   bg: blog[];
   lk: like;
   l1: like[] = [];
@@ -25,6 +34,32 @@ export class AboutPage {
   ionViewDidLoad() {
     this.storage.get('id').then((val) => {
       this.email = val;
+=======
+bg:blog[];
+like:number=0;
+comment:number=0;
+  constructor(public navCtrl: NavController,public bgdata:BlogdbProvider,public toast:ToastController) {
+
+  }
+  doRefresh(refresher){
+    
+     
+    
+      this.bgdata.getAllBlogs().subscribe(
+        (data:blog[])=>{
+          this.bg=data;
+        }
+      );
+    
+     refresher.complete();
+ 
+   }
+  ionViewDidLoad(){
+    let t1=this.toast.create({
+      message:"Pull Down to Refresh Content",
+      duration:5000,
+      position:"bottom"
+>>>>>>> a9abc2ea8ce07410f7bedc0b5da33b9de5457ac7
     });
     this.bgdata.getAllBlogs().subscribe(
       (data: blog[]) => {
@@ -48,6 +83,7 @@ export class AboutPage {
         }
       }
     );
+    t1.present();
   }
   tapev(e) {
     this.bgdata.getLikeEmail(e.fk_blog_id, this.email).subscribe(
@@ -88,6 +124,13 @@ export class AboutPage {
 
     });
     t1.present();
+  }
+  onRead(i:any)
+  {
+    
+    this.navCtrl.push(BlogdescriptionPage,{
+      param1:i
+    });
   }
 
 }

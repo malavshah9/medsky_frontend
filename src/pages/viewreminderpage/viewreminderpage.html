@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar color="myapp1">
+    <ion-title>My Reminders</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="card-background-page">
+
+    <ion-card *ngFor="let item of reminderarray">
+        <ion-card-header>
+       <b><font size="5">   {{item.rem_title}}</font></b>
+        </ion-card-header>
+        <ion-card-content>
+       
+       <strong><font size="4">   {{item.rem_desc}}</font></strong>
+       <br>
+       <ion-label>From</ion-label><ion-label>
+        <font size="4">
+        {{item.start_date}}
+      </font>
+        </ion-label>
+       
+       <ion-label>To</ion-label><ion-label><font size="4">{{item.end_date}}</font></ion-label>
+       
+        </ion-card-content>
+      </ion-card>
+    
+ 
+  <ion-fab center bottom>
+    <button ion-fab on-tap="addEvent()" color="myapp1"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+</ion-content>

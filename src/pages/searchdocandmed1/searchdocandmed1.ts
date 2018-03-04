@@ -32,6 +32,8 @@ export class Searchdocandmed1Page {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Searchdocandmed1Page');
+    this.matchdoctors=null;
+    this.matchmedicines=null;
     this.searchpro.getALlDoctors().subscribe(
       (data:doctor[])=>{
         this.alldoctors=data;
@@ -67,8 +69,8 @@ export class Searchdocandmed1Page {
     }
     else
     {
-      this.matchdoctors=[];
-      this.matchmedicines=[];
+      this.matchdoctors=null;
+      this.matchmedicines=null;
     }
   }
   onClickDoc(item:doctor)

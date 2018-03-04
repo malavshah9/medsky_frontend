@@ -21,16 +21,22 @@ import { Viewprescription2Page } from "../pages/viewprescription2/viewprescripti
 import { Viewprescription3Page } from "../pages/viewprescription3/viewprescription3";
 import { Searchdocpage1Page } from '../pages/searchdocpage1/searchdocpage1'
 import { Searchmedpage1Page } from "../pages/searchmedpage1/searchmedpage1";
-
+import { ChatwithbotPage } from "../pages/chatwithbot/chatwithbot";
+import { BlogdbProvider } from "../providers/blogdb/blogdb";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { PrescriptionProvider } from '../providers/prescription/prescription';
 import { SearchproProvider } from '../providers/searchpro/searchpro';
 import { UserlogProvider } from "../providers/userlog/userlog";
-import { BlogdbProvider } from '../providers/blogdb/blogdb';
-//import { Tutorialpage1Page } from '../pages/tutorialpage1/tutorialpage1';
+import { ChangepassPage } from '../pages/changepass/changepass';
+import { ForgetpassPage } from "../pages/forgetpass/forgetpass";
 
+import { Calendar } from '@ionic-native/calendar';
+import { ReminderproviderProvider } from '../providers/reminderprovider/reminderprovider';
+import { ViewreminderpagePage } from "../pages/viewreminderpage/viewreminderpage";
+import { AddremiderpagePage } from "../pages/addremiderpage/addremiderpage";
+import { BlogdescriptionPage } from "../pages/blogdescription/blogdescription";
 
 @NgModule({
   declarations: [
@@ -47,7 +53,13 @@ import { BlogdbProvider } from '../providers/blogdb/blogdb';
     Viewprescription2Page,
     Viewprescription3Page,
     Searchmedpage1Page,
-    Searchdocpage1Page
+    Searchdocpage1Page,
+    ChangepassPage,
+    ForgetpassPage,
+    ChatwithbotPage,
+    AddremiderpagePage,
+    ViewreminderpagePage,
+    BlogdescriptionPage
   ],
   imports: [
     BrowserModule,
@@ -74,7 +86,13 @@ import { BlogdbProvider } from '../providers/blogdb/blogdb';
     Viewprescription3Page,
 
     Searchmedpage1Page,
-    Searchdocpage1Page
+    Searchdocpage1Page,
+    ChangepassPage,
+    ForgetpassPage,
+    ChatwithbotPage,
+    ViewreminderpagePage,
+    AddremiderpagePage,
+    BlogdescriptionPage
   ],
   providers: [
     StatusBar,
@@ -84,7 +102,12 @@ import { BlogdbProvider } from '../providers/blogdb/blogdb';
     SearchproProvider,
     UserlogProvider,
     BlogdbProvider,
+<<<<<<< HEAD
     SocialSharing
+=======
+    Calendar,
+    ReminderproviderProvider
+>>>>>>> a9abc2ea8ce07410f7bedc0b5da33b9de5457ac7
   ]
 })
 export class AppModule {}

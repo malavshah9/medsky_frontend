@@ -10,13 +10,21 @@ import { blog } from '../../pages/about/blog';
 @Injectable()
 export class BlogdbProvider {
   url:string = "http://localhost:3000/blog/";
+<<<<<<< HEAD
   url2:string = "http://localhost:3000/blog_likes/";
   url3:string = "http://localhost:3000/likeEmail/";
+=======
+  blogid:Number;
+>>>>>>> a9abc2ea8ce07410f7bedc0b5da33b9de5457ac7
   constructor(public http: HttpClient) {
     console.log('Hello BlogdbProvider Provider');
   }
   getAllBlogs(){
     return this.http.get(this.url);
+  }
+  getBlogById()
+  {
+    return this.http.get(this.url+this.blogid);
   }
 
   getLikeEmail(id,email){
