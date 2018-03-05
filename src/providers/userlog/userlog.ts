@@ -22,7 +22,10 @@ export class UserlogProvider {
   public url_Byid:string="http://localhost:3000/alldata/";
   public url_email:string="http://localhost:3000/forget/";
   public url_chngpass:string="http://localhost:3000/change/";
+
+  
   id:string='';
+  usr:User_Class[]=[];
   Login(user:User_Class) {
   
     let body = JSON.stringify(user);
@@ -39,9 +42,20 @@ export class UserlogProvider {
     let ro = new RequestOptions({ headers: h });
    return this.http.post(this.url_signup, body, ro).map((res) => res.json());
   }
-  getUser(user)
+  updateUser(user){
+    let body = JSON.stringify(user);
+    let h = new Headers({ 'Content-Type': 'application/json' });
+    let ro = new RequestOptions({ headers: h });
+   return this.http.put(this.url_Byid+user.pk_usr_email_id, body, ro).map((res) => res.json());
+  }
+  getUserid(user)
   {
     return this.http.get(this.url_Byid+user).map((res) => res.json());
+  }
+  
+  getUser(user)
+  {
+    return this.http.get(this.url_Byid).map((res) => res.json());
   }
   sendemail(user)
   {
@@ -56,7 +70,7 @@ export class UserlogProvider {
     let body = JSON.stringify(user);
     let h = new Headers({ 'Content-Type': 'application/json' });
     let ro = new RequestOptions({ headers: h });
-    return this.http.put(this.url_chngpass+this.id, body, ro).map((res) => res.json());
+    return this.http.put(this.url_chngpass+user.pk_usr_email_id, body, ro).map((res) => res.json());
   }
 
 }

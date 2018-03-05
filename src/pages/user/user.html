@@ -7,7 +7,7 @@
 <ion-header>
 
     <ion-navbar color="myapp1">
-    <ion-title>User</ion-title>
+    <ion-title>User</ion-title>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   </ion-navbar>
 
 </ion-header>
@@ -25,21 +25,21 @@
       </ion-item>-->
      <ion-item>
           <ion-label floating>Name</ion-label>
-          <ion-input type="text" [(ngModel)]="name" name="name"readonly></ion-input>
+          <ion-input type="text" [(ngModel)]="name" name="name"></ion-input>
       </ion-item>
       <ion-item>
           <ion-label floating>Mobile No</ion-label>
-          <ion-input type="Number" [(ngModel)]="mno" name="mno" readonly></ion-input>
+          <ion-input type="Number" [(ngModel)]="mno" name="mno" ></ion-input>
       </ion-item>
       <br/>
-      <ion-list radio-group [(ngModel)]="Gender">
+      <ion-list radio-group [(ngModel)]="gen">
         <ion-item>
           <ion-label>Male</ion-label>
-          <ion-radio value="Male" checked></ion-radio>
+          <ion-radio value="Male"></ion-radio>
         </ion-item>
         <ion-item>
           <ion-label>Female</ion-label>
-          <ion-radio value="female"></ion-radio>
+          <ion-radio value="Female"></ion-radio>
         </ion-item>
         </ion-list>    
         
@@ -50,9 +50,6 @@
           <button ion-button round (click)="onEditClick()" color="myapp1" block>Edit Profile</button>
         </div>
         
-    
-   
-   
         <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
           {{ item }}
         </button>  

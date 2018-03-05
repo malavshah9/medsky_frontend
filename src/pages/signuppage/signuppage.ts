@@ -3,6 +3,7 @@ import { IonicPage, NavController,ToastController} from 'ionic-angular';
 import { UserlogProvider } from "../../providers/userlog/userlog";
 import { User_Class } from "../../providers/userlog/user_class";
 import { TabsPage } from "../tabs/tabs";
+import { Storage } from "@ionic/storage";
 
 /**
  * Generated class for the SignuppagePage page.
@@ -23,7 +24,7 @@ export class SignuppagePage {
   mno:string='';
   userObject:User_Class;
   
-  constructor(public toast:ToastController,public navCtrl: NavController, public data:UserlogProvider) {
+  constructor(public storage:Storage,public toast:ToastController,public navCtrl: NavController, public data:UserlogProvider) {
   }
 
   ionViewDidLoad() {
@@ -70,6 +71,9 @@ export class SignuppagePage {
         t4.present();
        }
        else{
+         
+        this.storage.set('id',this.email_id);
+        this.storage.set('pass',this.password);
         t1.present();
         this.navCtrl.push(TabsPage);
        }
